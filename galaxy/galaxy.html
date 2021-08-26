@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Galaxy</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <div class="hint">Click 'Esc' to toggle interface</div>
+
+    <div class="range range_speed">
+        <label for="range_speed">Speed is: <span id="range_speed_label"></span></label>
+        <input id="range_speed" type="range" min="1" max="199" value="5">
+    </div>
+
+    <div class="range range_number">
+        <label for="range_number">Number of stars: <span id="range_number_label"></span></label>
+        <input id="range_number" type="range">
+    </div>
+
+    <script src="../libs/stats.min.js"></script>
+    <script src="../init.js"></script>
+
+    <script src="configuration.js"></script>
+    <script src="star.js"></script>
+    <script src="scripts.js"></script>
+    <script src="range.js"></script>
+    <script src="keyboard.js"></script>
+</body>
+</html>
