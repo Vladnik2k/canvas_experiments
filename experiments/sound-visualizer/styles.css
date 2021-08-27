@@ -1,13 +1,9 @@
-html, body, canvas {
-    margin: 0;
-    width: 100%;
-    height: 100%;
+canvas {
     background: black;
 }
 
 body {
     --wave-color: #ff417e;
-    --main-font-size: 24px;
 }
 
 #audio {
@@ -32,25 +28,13 @@ label {
     visibility: hidden;
 }
 
-.hidden {
-    visibility: hidden;
-}
-
 .hint {
-    position: absolute;
-    top: 10px;
-    right: 10px;
     color: var(--wave-color);
-    font-size: var(--main-font-size);
 }
 
 @media (max-width: 500px) {
     #audio {
         margin: 50px 5%;
         width: 90%;
-    }
-
-    body {
-        --main-font-size: 16px;
     }
 }

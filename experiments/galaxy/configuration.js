@@ -15,5 +15,9 @@ const inputRangeSpeedName = 'range_speed';
 const labelNumberName = 'range_number_label';
 const labelSpeedName = 'range_speed_label';
 
-let isInterfaceClosed = false;
-const closeAllKeyCode = 'Escape';
+interfaceElements = [
+    document.getElementsByClassName('range')[0],
+    document.getElementsByClassName('range')[1],
+    document.getElementById(statsCanvasId),
+    document.getElementsByClassName('hint')[0]
+]

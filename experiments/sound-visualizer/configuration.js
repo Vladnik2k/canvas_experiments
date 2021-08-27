@@ -1,5 +1,8 @@
 const wavesColor = '#ff417e';
 const fftSizeMultiplier = 13;
 
-let isInterfaceClosed = false;
-const closeAllKeyCode = 'Escape';
+interfaceElements = [
+    document.getElementById(statsCanvasId),
+    document.getElementById('audio'),
+    document.getElementsByClassName('hint')[0],
+]
