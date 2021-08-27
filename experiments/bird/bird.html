@@ -10,14 +10,22 @@
 <body>
     <canvas id="canvas"></canvas>
 
-    <div class="hint">Score: <span id="score"></span></div>
+    <div class="hint">
+        Score: <span id="score"></span>
+        <br>Best score: <span id="bestScore"></span>
+        <br>Generation: <span id="generation"></span>
+    </div>
 
     <script src="../../libs/stats.min.js"></script>
+    <script src="../../libs/p5.min.js"></script>
+    <script src="../../libs/tensorflow.min.js"></script>
     <script src="../init.js"></script>
 
     <script src="configuration.js"></script>
     <script src="bird.js"></script>
     <script src="obstacle.js"></script>
+    <script src="neural-network.js"></script>
+    <script src="generic-algorithm.js"></script>
     <script src="scripts.js"></script>
 </body>
 </html>

@@ -58,3 +58,11 @@ window.addEventListener('keydown', ($event) => {
 function hideOrShowElement(element) {
     isInterfaceClosed ? element.classList.add('hidden') : element.classList.remove('hidden');
 }
+
+// tensorflow lib
+
+if (tf) { tf.setBackend('cpu'); }
+
+// p5 lib
+
+if ((typeof p5) !== 'undefined') { new p5(); }
