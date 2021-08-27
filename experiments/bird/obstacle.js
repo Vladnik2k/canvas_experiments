@@ -1,5 +1,4 @@
 class Obstacle {
-    color;
     positionX;
     windowY;
     width;
@@ -10,7 +9,6 @@ class Obstacle {
     }
 
     generateStartValues(positionX) {
-        this.color = obstacleColor;
         this.positionX = positionX;
         this.width = obstacleWidth;
         this.windowY = Math.random() * (canvas.height - obstacleWindowHeight);
@@ -21,8 +19,7 @@ class Obstacle {
     }
 
     draw() {
-        ctx.fillStyle = this.color;
-        ctx.fillRect(this.positionX, 0, this.width, this.windowY);
-        ctx.fillRect(this.positionX, this.windowY + obstacleWindowHeight, this.width, canvas.height);
+        ctx.drawImage(obstacleImage, this.positionX, 0, this.width, this.windowY);
+        ctx.drawImage(obstacleImage, this.positionX, this.windowY + obstacleWindowHeight, this.width, canvas.height);
     }
 }

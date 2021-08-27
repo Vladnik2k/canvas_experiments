@@ -1,18 +1,19 @@
 class Bird {
-    color;
     position;
     movement;
-    radius;
+    size;
     points;
     nearestObstacle;
 
+    imageNumber;
+
     constructor() {
-        this.color = birdColor;
         this.position = { x: leftMargin, y: canvas.height / 2 };
         this.movement = { x: 0, y: -10 };
-        this.radius = birdRadius;
+        this.size = { width: birdWidth, height: birdHeight };
         this.points = 0;
         this.nearestObstacle = null;
+        this.imageNumber = 0;
     }
 
     move() {
@@ -21,10 +22,8 @@ class Bird {
     }
 
     draw() {
-        ctx.fillStyle = this.color;
-        ctx.beginPath();
-        ctx.arc(this.position.x, this.position.y, this.radius, 0, 2 * Math.PI);
-        ctx.fill();
+        ctx.drawImage(images[Math.floor(this.imageNumber) % images.length], this.position.x, this.position.y, this.size.width, this.size.height);
+        this.imageNumber += 0.5;
     }
 
     jump() {
@@ -32,7 +31,7 @@ class Bird {
     }
 
     setNearestObstacle(obstacles) {
-        const nearestObstacle = obstacles.filter(obstacle => obstacle.positionX + obstacle.width > this.position.x - this.radius)[0];
+        const nearestObstacle = obstacles.filter(obstacle => obstacle.positionX + obstacle.width > this.position.x)[0];
         if (nearestObstacle !== this.nearestObstacle) {
             this.nearestObstacle ? this.points++ : null;
             this.nearestObstacle = nearestObstacle;
@@ -40,11 +39,13 @@ class Bird {
     }
 
     isHit() {
-        if (this.position.x + this.radius < this.nearestObstacle.positionX ||
-            this.position.x - this.radius > this.nearestObstacle.positionX + obstacleWidth) { // check x
+        if (this.position.y + this.size.height >= canvas.height || this.position.y <= 0) {
+            return true;
+        } else if (this.position.x + this.size.width < this.nearestObstacle.positionX ||
+            this.position.x > this.nearestObstacle.positionX + obstacleWidth) { // check x
             return false;
-        } else if (this.position.y - this.radius > this.nearestObstacle.windowY &&
-            this.position.y + this.radius < this.nearestObstacle.windowY + obstacleWindowHeight) { // check is in window
+        } else if (this.position.y > this.nearestObstacle.windowY &&
+            this.position.y + this.size.height < this.nearestObstacle.windowY + obstacleWindowHeight) { // check is in window
             return false;
         }
 

@@ -33,14 +33,6 @@ function changeObstacles() {
     }
 }
 
-function isCollision(bird) {
-    if (bird.position.y + bird.radius >= canvas.height || bird.position.y - bird.radius <= 0) {
-        return true;
-    }
-
-    return bird.isHit();
-}
-
 function showScore() {
     document.getElementById('score').innerText = `${birds[0].points}`;
 }
@@ -66,7 +58,7 @@ function animate() {
     showScore();
 
     for (let i = 0; i < birds.length; i++) {
-        if (isCollision(birds[i])) {
+        if (birds[i].isHit()) {
             killedBirds.push(birds[i]);
             birds = birds.filter(bird => bird !== birds[i]);
             i--;
