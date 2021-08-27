@@ -1,6 +1,6 @@
 let stars = [];
 
-function generateStats() {
+function generateStars() {
     for (let i = 0; i < numberOfStars; i++) {
         stars.push(new Star());
     }
@@ -19,5 +19,5 @@ function animate() {
     requestAnimationFrame(animate);
 }
 
-generateStats();
+generateStars();
 animate();
