@@ -1,9 +1,10 @@
-canvas {
-    background: black;
+body {
+    --main-color: #ff417e;
+    --wave-color: var(--main-color);
 }
 
-body {
-    --wave-color: #ff417e;
+canvas {
+    background: black;
 }
 
 #audio {
@@ -26,10 +27,6 @@ label {
 #file-input {
     position: absolute;
     visibility: hidden;
-}
-
-.hint {
-    color: var(--wave-color);
 }
 
 @media (max-width: 500px) {

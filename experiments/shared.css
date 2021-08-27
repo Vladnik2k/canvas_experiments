@@ -6,6 +6,8 @@ html, body, canvas {
 
 body {
     --main-font-size: 24px;
+    --main-color: white;
+    --secondary-color: black;
 }
 
 .hidden {
@@ -17,10 +19,51 @@ body {
     top: 10px;
     right: 10px;
     font-size: var(--main-font-size);
+    color: var(--main-color);
+}
+
+.range {
+    position: absolute;
+    width: 100%;
+    bottom: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.range input[type="range"] {
+    padding: 1px 2px;
+    width: 60%;
+    -webkit-appearance: none;
+    height: 20px;
+    border-radius: 14px;
+    background: var(--main-color);
+    -webkit-box-shadow: inset 0 1px 0 0 var(--secondary-color), inset 0 -1px 0 0 var(--secondary-color);
+}
+
+.range input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 40px;
+    height: 18px;
+    border-radius: 12px;
+    background: var(--secondary-color);
+}
+
+.range label {
+    font-size: var(--main-font-size);
+    color: var(--main-color);
+}
+
+input[type="range"]:hover {
+    cursor: pointer;
 }
 
 @media (max-width: 500px) {
     body {
         --main-font-size: 16px;
+    }
+    input[type="range"] {
+        width: 90% !important;
     }
 }
