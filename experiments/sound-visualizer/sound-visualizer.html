@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sound visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico">
+
+</head>
+<body>
+    <label for="file-input"></label>
+    <input id="file-input" type="file" accept="audio/*" />
+
+    <canvas id="canvas"></canvas>
+
+    <div class="hint">Click 'Esc' to toggle interface</div>
+    <audio id="audio" controls></audio>
+
+    <script src="../../libs/stats.min.js"></script>
+    <script src="../../init.js"></script>
+
+    <script src="configuration.js"></script>
+    <script src="keyboard.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
