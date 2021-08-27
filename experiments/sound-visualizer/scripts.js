@@ -1,7 +1,11 @@
 const audio = document.getElementById('audio');
 const fileInput = document.getElementById('file-input');
 
-let analyzer;
+const audioContext = new AudioContext();
+const audioSource = audioContext.createMediaElementSource(audio);
+let analyzer = audioContext.createAnalyser();
+audioSource.connect(analyzer);
+analyzer.connect(audioContext.destination);
 let bufferLength;
 let dataArray;
 
@@ -9,15 +13,8 @@ fileInput.addEventListener('change', function () {
     const file = this.files[0];
 
     if (!file) return;
-
     audio.src = URL.createObjectURL(file);
     audio.play();
-
-    const audioContext = new AudioContext();
-    const audioSource = audioContext.createMediaElementSource(audio);
-    analyzer = audioContext.createAnalyser();
-    audioSource.connect(analyzer);
-    analyzer.connect(audioContext.destination);
     analyzer.fftSize = Math.pow(2, fftSizeMultiplier);
 
     bufferLength = analyzer.frequencyBinCount;
