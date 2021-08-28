@@ -19,5 +19,4 @@ interfaceElements = [
     document.getElementsByClassName('range')[0],
     document.getElementsByClassName('range')[1],
     document.getElementById(statsCanvasId),
-    document.getElementsByClassName('hint')[0]
 ];
