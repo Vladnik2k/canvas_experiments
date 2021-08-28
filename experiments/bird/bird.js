@@ -15,7 +15,7 @@ class Bird {
         this.generateStartValues();
         if (brain) {
             this.brain = brain.copy();
-        } else if (mashingLearning) {
+        } else if (machineLearning) {
             this.brain = new NeuralNetwork(3, 8, 2);
         }
     }

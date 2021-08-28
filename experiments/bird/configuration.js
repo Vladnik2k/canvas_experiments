@@ -1,5 +1,8 @@
 const backgroundColor = '#ffe8b6';
-const mashingLearning = true;
+const jumpKey = 'Space';
+
+// mashing learning
+const machineLearning = true;
 const mutation = 0.1;
 
 // bird
@@ -17,7 +20,7 @@ for (let i = 0; i < 11; i++) {
     images.push(image);
 }
 
-let numberOfBirds = mashingLearning ? 100 : 1;
+let numberOfBirds = machineLearning ? 100 : 1;
 
 // obstacle
 const obstacleSpeed = 2;
@@ -29,3 +32,8 @@ const obstacleWindowHeight = 225;
 
 const obstacleImage = new Image(birdWidth, birdHeight);
 obstacleImage.src = `./images/obstacle.png`;
+
+interfaceElements = [
+    document.getElementById(statsCanvasId),
+    document.getElementsByClassName('hint')[0]
+];

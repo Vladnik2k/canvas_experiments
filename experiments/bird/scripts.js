@@ -4,7 +4,15 @@ let obstacles = [];
 let bestScore = 0;
 let generation = 0;
 
-window.addEventListener('keypress', () => { !mashingLearning ? birds[0].jump() : null });
+window.addEventListener('keypress', (event) => {
+    if (event.code === jumpKey && !machineLearning) {
+        birds[0].jump();
+    }
+});
+
+if (machineLearning) {
+    document.getElementsByClassName('hint')[0].innerHTML += '<br>Generation: <span id="generation"></span>';
+}
 
 function generateBirds() {
     birds = [];
@@ -38,14 +46,13 @@ function changeObstacles() {
 function showScore() {
     document.getElementById('score').innerText = `${birds[0].points}`;
     document.getElementById('bestScore').innerText = `${bestScore}`;
-    if (mashingLearning) {
+    if (machineLearning) {
         document.getElementById('generation').innerText = `${generation}`;
     }
 }
 
 function nextBirdsGeneration() {
     calculateFitness(killedBirds);
-    console.log('New generation');
 
     birds = [];
     for (let i = 0; i < numberOfBirds; i++) {
@@ -56,7 +63,7 @@ function nextBirdsGeneration() {
 function start() {
     generateObstacles();
     if (killedBirds.length) {
-        mashingLearning ? nextBirdsGeneration() : generateBirds();
+        machineLearning ? nextBirdsGeneration() : generateBirds();
     } else {
         generateBirds();
     }
@@ -76,7 +83,7 @@ function animate() {
         birds[i].draw();
         birds[i].setNearestObstacle(obstacles);
 
-        if (mashingLearning) {
+        if (machineLearning) {
             birds[i].think();
         }
     }
