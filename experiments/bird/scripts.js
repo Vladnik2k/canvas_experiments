@@ -10,8 +10,8 @@ window.addEventListener('keypress', (event) => {
     }
 });
 
-if (machineLearning) {
-    document.getElementsByClassName('hint')[0].innerHTML += '<br>Generation: <span id="generation"></span>';
+if (!machineLearning) {
+    document.getElementById('generation-label').classList.add('hidden');
 }
 
 function generateBirds() {
