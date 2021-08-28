@@ -1,0 +1,14 @@
+body {
+    --main-color: hsl(125, 50%, 50%);
+    --secondary-color: rgba(0,0,0,0.8);
+}
+
+.range_size {
+    bottom: 100px;
+}
+
+@media (max-width: 500px) {
+    .range_size {
+        bottom: 80px;
+    }
+}

@@ -61,7 +61,7 @@ function hideOrShowElement(element) {
 
 // tensorflow lib
 
-if (tf) { tf.setBackend('cpu'); }
+if ((typeof tf) !== 'undefined') { tf.setBackend('cpu'); }
 
 // p5 lib
 
