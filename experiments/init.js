@@ -19,7 +19,7 @@ document.body.appendChild(stats.domElement);
 // init canvas
 
 const canvas = document.getElementById('canvas');
-const ctx = canvas.getContext('2d');
+const ctx = canvas.getContext('2d', { alpha: false });
 const centerCanvas = { x: 0, y: 0 };
 
 const resizeCanvas = () => {
@@ -57,6 +57,18 @@ window.addEventListener('keydown', ($event) => {
 
 function hideOrShowElement(element) {
     isInterfaceClosed ? element.classList.add('hidden') : element.classList.remove('hidden');
+}
+
+// range
+
+function initRange(id, min, max, value, func) {
+    document.getElementById(id).min = min;
+    document.getElementById(id).max = max;
+    document.getElementById(id).value = value;
+
+    document.getElementById(id).addEventListener('input', ($event) => {
+        func(+$event.target.value);
+    });
 }
 
 // tensorflow lib
