@@ -1,0 +1,3 @@
+interfaceElements = [
+    document.getElementById(statsCanvasId),
+];

@@ -17,10 +17,3 @@ const raycaster = new THREE.Raycaster();
 
 // const axesHelper = new THREE.AxesHelper( 50 );
 // scene.add( axesHelper );
-
-// init light
-
-const light = new THREE.PointLight(0xFFFFFF, 2, 1000);
-light.position.set(0, 0, 100);
-scene.add(light);
-
