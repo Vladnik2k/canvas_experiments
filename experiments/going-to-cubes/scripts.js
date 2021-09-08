@@ -27,6 +27,7 @@ function start() {
 }
 
 function changeCameraPosition() {
+    // camera.position.z = (cameraZPositionStart - 3 * frames / speedSlow);
     camera.position.z = (3.15 * Math.exp(- 3 * frames / speedSlow / cameraZPositionStart) - 0.15) * cameraZPositionFinish;
 }
 
