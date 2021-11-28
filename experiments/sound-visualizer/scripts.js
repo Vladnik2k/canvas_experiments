@@ -14,6 +14,7 @@ fileInput.addEventListener('change', function () {
 
     if (!file) return;
     audio.src = URL.createObjectURL(file);
+    audioContext.resume();
     audio.play();
     analyzer.fftSize = Math.pow(2, fftSizeMultiplier);
 

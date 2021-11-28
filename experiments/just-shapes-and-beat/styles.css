@@ -1,0 +1,41 @@
+body {
+    --main-color: #ff417e;
+    --wave-color: var(--main-color);
+}
+
+canvas {
+    background: black;
+}
+
+#audio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+.button-wrapper {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    padding: 30px 61px;
+    border-radius: 4px;
+    color: var(--main-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    margin: 25px;
+    font-family: "Roboto", sans-serif;
+    filter: hue-rotate(0deg);
+    border: 2px solid var(--main-color);
+    transition: all 0.1s linear;
+}

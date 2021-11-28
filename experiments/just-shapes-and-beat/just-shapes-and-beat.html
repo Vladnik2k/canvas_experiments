@@ -1,0 +1,30 @@
+<!-- Inspired by https://www.youtube.com/watch?v=1jPOfZdNdCk&t=400s -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSAB</title>
+    <link rel="stylesheet" href="../shared/shared.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico">
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <div class="button-wrapper">
+        <button id="gameStart">Start the game</button>
+    </div>
+    <audio id="audio" controls src="TheFatRat%20-%20Never%20Be%20Alone.mp3"></audio>
+
+    <script src="../../libs/stats.min.js"></script>
+
+    <script src="../shared/stats-init.js"></script>
+    <script src="../shared/canvas-init.js"></script>
+    <script src="../shared/keyboard-init.js"></script>
+
+    <script src="configuration.js"></script>
+    <script src="player.js"></script>
+    <script src="shapes/shape.js"></script>
+    <script src="shapes/ball-with-angles.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
